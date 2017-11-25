@@ -6,16 +6,19 @@ body {
   margin: 0 10%;
 }
 
-wrap {
-  background-repeat: repeat;
-  max-height: 400px;
-  max-width: inherit;
+#wrap {
+  position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ width: 100%;
+ height: 200;
 }
 
 ul.navbar {
   margin: 0;
   padding: 0px;
-  background-color: #424e6f;
+  background-color: #2d2c3e;
   text-align: center;
 }
 
@@ -24,7 +27,7 @@ ul.navbar li {
 }
 
 ul.navbar li a {
-  color: #f4c2c2;
+  color: #bbbbbb;
   padding: 20px 20px;
   display: inline-block;
   text-decoration: none;
@@ -32,13 +35,13 @@ ul.navbar li a {
 
 /* when hovering over option */
 ul.navbar li a:hover {
-  background-color: #fbf7f5;
+  background-color: ;
 }
 
 /* Change if you are on that section */
 ul.navbar li a.active {
-  color:#fbf7f5;
-  background-color: #f4c2c2;
+  color:#ffffff;
+  background-color: #bbbbbb;
 }
 
 h1 {
@@ -50,7 +53,7 @@ h1 {
 h2 {
   color: #36454f;
   padding: 30px;
-  background-color: #fbf7f5;
+  background-color: #aaaaaa;
   text-align: center;
 }
 
@@ -83,7 +86,7 @@ tr:nth-child(odd) {
 th, td {
   padding: 15px;
   border-bottom: 1px solid #d6ffe1;
-  color: #424e6f;
+  color: #2d2c3e;
 }
 
 td {
@@ -103,21 +106,21 @@ img {
 footer {
   margin: 0;
   padding: 0px;
-  background-color: #424e6f;
+  background-color: #2d2c3e;
   text-align: center;
 }
 
 a.email {
   text-decoration: none;
-  color: #424e6f;
+  color: #2d2c3e;
 }
 
 a.email:hover {
-  background-color: #f4c2c2;
+  background-color: #bbbbbb;
   color: #d6ffe1;
 }
 footer li {
-  color: #f4c2c2;
+  color: #bbbbbb;
   padding: 40px 20px;
   display: inline-block;
   text-decoration: none;
@@ -139,5 +142,5 @@ btn {
 }
 
 #btn:hover {
-  background-color: #f4c2c2;
+  background-color: #bbbbbb;
 }
