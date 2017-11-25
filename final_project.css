@@ -6,6 +6,12 @@ body {
   margin: 0 10%;
 }
 
+wrap {
+  background-repeat: repeat;
+  max-height: 400px;
+  max-width: inherit;
+}
+
 ul.navbar {
   margin: 0;
   padding: 0px;
