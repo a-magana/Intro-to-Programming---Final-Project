@@ -13,6 +13,7 @@ body {
  right: 0;
  width: 100%;
  height: 200;
+ background-repeat: repeat-x;
 }
 
 ul.navbar {
@@ -45,20 +46,20 @@ ul.navbar li a.active {
 }
 
 h1 {
-  color: #36454f;
+  color: #2d2c3e;
   padding: 50px 25px 25px;
   text-align: center;
 }
 
 h2 {
-  color: #36454f;
+  color: #2d2c3e;
   padding: 30px;
   background-color: #aaaaaa;
   text-align: center;
 }
 
 p {
-  color: black;
+  color: white;
   padding: 0 25px;
   font-size: 18px;
   text-align: center;
