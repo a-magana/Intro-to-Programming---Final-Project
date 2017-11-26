@@ -6,7 +6,7 @@ body {
   margin: 0 10%;
 }
 
-.wrap {
+.banner {
 position: relative;
  top: 0;
  left: 0;
@@ -99,7 +99,7 @@ div {
 
 img {
   max-height: 290px;
-  max-width: 100%
+  max-width: 100%;
 }
 
 footer {
