@@ -5,7 +5,8 @@ Website: https://a-magana.github.io/Intro-to-Programming---Final-Project/
 
 Original Data Sources:
 - Crimes data: https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2
-  Crime data files were to large to upload: https://www.dropbox.com/s/vhl66dihz7c3plu/Chicrimes.csv?dl=0
+  Crime data files were to large to upload. Here is the most up to date/clean data:
+  https://www.dropbox.com/s/uegmvcg6d9ridnw/final_clean.csv?dl=0
 
 - ACS for Information regarding population demographics: https://www.census.gov/programs-surveys/acs/data.html
 
