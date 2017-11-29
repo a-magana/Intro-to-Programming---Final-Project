@@ -15,7 +15,7 @@ df_csv.to_csv("newcrime.csv", index= "FALSE") #create new file for following ste
 
 
 #filling in those two separate columns
-property_crime = ['BURGLARY', 'LARCENY', 'MOTOR VEHICLE THEFT', 'ARSON']
+property_crime = ['BURGLARY', 'LARCENY', 'MOTOR VEHICLE THEFT', 'ARSON', 'THEFT']
 
 new_csv_data = []
 
