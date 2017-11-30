@@ -24,7 +24,7 @@ font-family: 'Ubuntu', sans-serif;
 ul.navbar {
   margin: 0;
   padding: 0px;
-  background-color: black;
+  background-color: #5c2d42;
   text-align: center;
 }
 
@@ -58,16 +58,16 @@ h1 {
 
 h2 {
   color: #2d2c3e;
-  padding: 30px;
-  background-color: #aaaaaa;
+  background-color: #6a9c89;
   text-align: center;
+  padding: 50px 25px 25px;
 }
 
 p {
   color: black;
-  padding: 0 25px;
-  font-size: 18px;
-  text-align: center;
+  padding: 0 30px;
+  font-size: 16px;
+  text-align: left;
 }
 
 pre {
@@ -81,21 +81,23 @@ table {
   width: 100%;
   align-self: center;
   padding: 10px 25px 25px;
+  color: black;
 }
 
 
 /* to make odd rows colored */
 tr:nth-child(odd) {
-  background-color: #e6ffed;
+  background-color: #8c925b;
+  color: black;
 }
 
 th, td {
   padding: 15px;
-  border-bottom: 1px solid #d6ffe1;
-  color: #2d2c3e;
+  color: black;
+  text-align: center;
 }
 
-td {
+.team {
   text-align: center;
 }
 
@@ -107,7 +109,7 @@ div {
 footer {
   margin: 0;
   padding: 0px;
-  background-color: #2d2c3e;
+  background-color: #5c2d42;
   text-align: center;
 }
 
