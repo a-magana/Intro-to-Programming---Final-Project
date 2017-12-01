@@ -11,8 +11,10 @@
 <body>
 
 <ul class="navbar">
+  <li><a href="#background">Background</a></li>
   <li><a href="#findings">Findings</a></li>
   <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#limitations">Limitations</a></li>
   <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -20,59 +22,124 @@
   <h1 class="banner-text"> Broken Windows Theory </h1>
 </div>
 
+<h2 id="Background"> Background </h2>
 <p class="theory-paragraph">
-Our project seeks to explore James Q. Wilson and George Kelling’s broken windows theory, which links crime and disorder to a lack of civic engagement.
-The theory claims that as crime increases in a community, residents of the area internalize that they live in an “unsafe” environment and in turn, become apathetic.
-This apathy leads to a decrease in civic engagement, weakening social ties. Criminals, in turn, begin feeling less accountable to members of their community and gradually commit more serious crimes.
-The broken windows theory advocates for eliminating disorder to prevent incidences of serious crimes.
-
-We want to apply the broken windows theory to neighborhoods in Chicago by examining whether neighborhoods with higher civic engagement have lower crime.
+  Our project seeks to explore James Q. Wilson and George Kelling’s broken windows theory, which links crime and disorder to a lack of civic engagement. The theory claims that as crimes and vandalism increases in a community, residents of the area internalize that they live in an “unsafe” environment and in turn, become apathetic. This apathy leads to a decrease in civic engagement, weakening social ties. Criminals, in turn, begin feeling less accountable to members of their community and gradually commit more serious crimes. Broken windows theory also suggests there is a relationship between abandoned buildings and crimes, noting that areas with low supervision can become havens for criminal activity. The broken windows theory advocates for eliminating disorder to prevent incidents of serious crimes. We want to apply the broken windows theory to neighborhoods in Chicago by examining whether neighborhoods with higher incidences of 311 reports for abandoned buildings have lower crime.
+  <br>
+  <p class="theory-paragraph">
+  How 311 Requests Work:
+</p>
+  <p class="theory-paragraph">
+  After a 311 request is submitted, an inspector from the Chicago Building Department will assess the building. If the building is deemed in violation, the department notifies the owner to ensure the building is in a safe condition within 15 days. After the 15th day, the owner of the building is fined between $200 to $1000 per day, so there is a strong incentive to ensure the building is secured prior to the 16th day.
 
 </p>
 
-<h2 id="findings"> Findings </h2>
+<h2 id="findings"> Key Findings </h2>
+<ul class="theory-paragraph" style="list-style-type:circle">
+    <li>Contrary to our initial hypothesis, 311 reports for building violations is positively correlated with incidences of property crimes and the findings are highly statistically significant
+</li>
+<br>
+    <li>311 reports for building violations are statistically associated with incidences of violent crimes and findings are highly significant; the positive correlation with crime is greater in magnitude for violent crimes than property crimes
+</li>
+<br>
+    <li>After controlling for median income and education level, 311 reporting effects on violent crimes increases, when compared to simple OLS regression results
+</li>
+<br>
+    <li>Interestingly, we find that median income is positively associated with violent crimes and the finding is statistically significant, but we do not see the same effect for property crimes (nor is the result statistically significant)
+</li>
+<br>
+    <li>The OLS regression examining 311 reports association to violent crime demonstrated there is a positive and statistically significant association between 311 reports and violent crimes.
+</li>
+  </ul>
+  <div>
+  <img class="reg" src="Analysis/Regression.png">
+  </div>
+  <div>
+  <img class="reg2" src="Analysis/Regression_violent.png">
+  </div>
 
+<div class="scat1">
+<img class="test" src="Analysis/reports311_propertycrime.png">
+</div>
 
+<div class="scat2">
+<img class="test" src="Analysis/reports311_violentcrime.png">
+</div>
+
+<br>
+
+<p class="theory-paragraph">
 <h2 id="methodology">Methodology</h2>
-<p class="theory-paragraph">
-  Cleaning and merging the data was the most challenging part of this project. We decided that we would use community area as the key. The ACS data only included 2011 - 2015, so we decided to limit all our data to this timeframe.Most of the data cleaning was done with bash, but the ACS data was altered using python. There were some errors in the data itself, such as columns being off or blank. We had to find ways of altering the data and getting it ready to merge.
 </p>
-<p class="theory-paragraph">
-  311 Calls
-  All we needed from this data set was the count of calls from each community area. So, we reduced the data to a date and community area column.
-</p>
-<p class="theory-paragraph">
-  Crime Data
-  We were specifically interested in the number of property and violent crimes per community area from 2011-2015. According to the Chicago Police Dept, Property crimes include: Burglary, Larceny, Motor Vehicle Theft, and Arson. The data, did not use the term “Burglary” so we decided to include “Theft.” Violent crimes included: Homicide, Criminal Sexual Assault, Assault, Battery and Robbery.
 
-  We cleaned the input cvs file and created new versions with each major modification. These files were too large to post on Github, so we included links to dropbox. We narrowed the cvs file down to the year, community area, index number, and primary type of crime = property or violent crime. After this, we added two columns “Property” and “Violent.” Each row of these columns had either a 1 or a 0. This allowed us to more easily count the distinct crime categories.
+<p class="theory-paragraph">
+  Cleaning and merging the data was the most challenging part of this project, while using community area as the key. The ACS data only included 2011 - 2015, so we decided to limit all our data to this timeframe. Most of the data cleaning was done with bash, but python was used in altering the ACS data and in the merging of the three datasets. There were some errors in the data itself, such as columns being off or blank, and different datasets used different indexes which required restructuring. From this, we downloaded our datasets individually, identified the necessary columns, restructured them as needed aligning community area as the key, and finally merged them together in one unified dataset.</p>
+<p class="theory-paragraph">
+  <em>311 Calls</em>
+  <br>
+  All we needed from this dataset was the number of 311 calls and their associated community area. After filtering for those columns, we summed the number of 311 calls, grouping by the respective community area (for all calls from 2011-2015).
 </p>
 <p class="theory-paragraph">
-  ACS Data
-  We wanted to explore some of the demographics of people living in each community area. We were specifically interested in Median income and educational attainment. ACS data had Median income and for educational attainment, it had information regarding the total number of people over 25 with a Bachelor’s degree and the total number of people over 25 with a high school degree. Because we were wanted a percentage of each, we added two additional columns that divided each of these categories by the total population in each community area.
+  <em>Crime data</em>
+  <br>
+  We were specifically interested in the number of property and violent crimes per community area from 2011-2015. According to the Chicago Police Dept, Property crimes include: Burglary, Larceny, Motor Vehicle Theft, and Arson. The data, did not use the term “Burglary” so we decided to include “Theft.” Violent crimes included: Homicide, Criminal Sexual Assault, Assault, Battery and Robbery.
 </p>
 <p class="theory-paragraph">
-  Merge
+  We cleaned and narrowed the csv file down to year, community area, and primary type (type of crime from the 8 crimes listed above). We added two separate columns for property crime and violent crime, which simply received a 0 or 1 dependinding on the category they fell into. Then we summed total crimes (primary type), property crimes, and violent crimes all indexed by community area (for all years 2011-2015). These files were too large to post on Github, so we included links to dropbox.
+</p>
+<p class="theory-paragraph">
+  <em>ACS Data</em>
+  <br>
+  We wanted to explore some of the demographics of people living in each community area. We were specifically interested in Median income and educational attainment. ACS data had Median income, and for educational attainment, it had information regarding the total number of people over 25 with a Bachelor’s degree and the total number of people over 25 with a high school degree. Because we were wanted a percentage of each, we added two additional columns that divided each of these categories by the total population in each community area. Our resulting dataset left us with median income, percent of buildings in that neighborhood that are vacant, percent of the population over age 25 with a high school degree, and precent of the population over 25 with a bachelors degree, all indexed by community area.
+</p>
+<p class="theory-paragraph">
+  <em>Merge</em>
+  <br>
   Once we had the minimum information from each data set, we merged them all using the community area as the key. This file contained the following columns:
   Community Area, Property, Violent, Primary Type, GEOG (Name of Community area), POP_25OV, HS, BACH, MEDINC, VACperc, PopOvr25wBach, PopOv25wHS, and Reports (for number of 311 reports).
+</p>
+<p class="theory-paragraph">
+  With this data, we performed multiple regression analyses to determine any statstically significant relationship between 311 calls and crime, in support of the broken windows theory.
 </p>
 
 <p class="theory-paragraph">
   With this data, we were able to run regressions and see if we found anything that was statistically significant and whether the findings supported the broken windows theory.
-
+</p>
+<p class="theory-paragraph">
+<em>The Baseline Model:</em>
+<br>
+We draw on a model to assess the relationship between 311 reports to investigate an abandoned building and crime in Chicago neighborhoods. Crime is broken up into two categories: property and violent crimes. We include a control for percentage of vacant property according to ACS 2010-2015 estimates to control for baseline vacant properties in each community area. We also draw on ACS estimates for demographic data, including median income, and education levels (population share over 25 with Bachelors and share with high school degree). Using these estimates, we aim to observe the effect 311 reporting and interventions into an abandoned building has on crime, and particularly, on property and violent crimes. The model is summarized below:
+<pre >
+Crime ~ Reports + VACperc + MEDINC + PopOv25wBach + PopOv25wHS
+</pre>
 </p>
 
+
+
+<h2 id="limitations"> Limitations </h2>
+  <ul class="theory-paragraph" style="list-style-type:circle">
+      <li>Our data does not take into account areas that violations were actually inspected; referring back to the earlier section, submitting a service request from the city will lead to an inspector to assess the call. How secured the building becomes after is not accounted for in the data, so just having a 311 report and not having the building rehabbed may not have a crime reducing effect. </li>
+    <br>
+      <li>We did not account for the pre- and post- of a 311 report, which would have better isolated whether or not there was a crime-reducing effect after a building was assessed. In the next iteration of our analysis, we intend to incorporate this into our model.
+      </li>
+    <br>
+      <li>There is a selection bias issue with 311 calls. It is likely that a civilian will only report a vacant property if it is causing significant costs on the local community, like through crime. This has implications on the interpretation of our findings. In particular we expect crime rates to be higher than average in the time period preceding a service call than it would be for the typical vacant or abandoned property. The effects we observe should be understood as the effect of 311 reports on vacant buildings where crime is more likely to already be prevalent.
+      </li>
+    <br>
+      <li>Our grouping of the years also limits our ability to capture changes over time. With the crimes and 311 calls grouped for all years, any changes between those years would be lost in our analysis.
+      </li>
+    </ul>
+
+
+
 <h2 id="contact">Contact Info</h2>
-<p class="team">The team: </p>
 <table><col>
     <tr><th>Andrea Magana</th>      <td>andreamagana1@gmail.com</td></tr>
     <tr><th>Vicky Stavropoulos</th>       <td>vastavropoulos@gmail.com</td></tr>
     <tr><th>Steven Walker</th>           <td>walkersj90@gmail.com</td></tr>
 
 </col></table>
-
-
-
+<br>
 <script>
 /* a little bit of javascript for my top button to work well */
 window.onscroll = function() {scrollFunction()};
