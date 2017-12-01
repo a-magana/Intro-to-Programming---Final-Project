@@ -3,4 +3,4 @@ import pandas as pd
 
 df = pd.read_csv("crimez.csv")
 solution= df.groupby('Community Area')['Primary Type'].count().sort_values(ascending = False)
-print(solution)
+solution.to_csv("highestvol_crime.csv")
