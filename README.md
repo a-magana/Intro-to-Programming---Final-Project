@@ -16,6 +16,8 @@ Original Data Sources:
 
 Looking specifically between 2011 and 2015. All data were merged on community area.
 
+The three different data sets and our analysis work have been divided into three folders. Files containing our code have comments that explain their function. Below is our methodology and explanation of issues we encountered. For background information, findings, and our conclusion, please check out our website. 
+
 Methodology:
 
 Cleaning and merging the data was the most challenging part of this project, while using community area as the key. The ACS data only included 2011 - 2015, so we decided to limit all our data to this timeframe. Most of the data cleaning was done with bash, but python was used in altering the ACS data and in the merging of the three datasets. There were some errors in the data itself, such as columns being off or blank, and different datasets used different indexes which required restructuring. From this, we downloaded our datasets individually, identified the necessary columns, restructured them as needed aligning community area as the key, and finally merged them together in one unified dataset.
