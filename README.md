@@ -47,5 +47,6 @@ The Baseline Model:
 We draw on a model to assess the relationship between 311 reports to investigate an abandoned building and crime in Chicago neighborhoods. Crime is broken up into two categories: property and violent crimes. We include a control for percentage of vacant property according to ACS 2010-2015 estimates to control for baseline vacant properties in each community area. We also draw on ACS estimates for demographic data, including median income, and education levels (population share over 25 with Bachelors and share with high school degree). Using these estimates, we aim to observe the effect 311 reporting and interventions into an abandoned building has on crime, and particularly, on property and violent crimes. The model is summarized below:
 
 Crime ~ Reports + VACperc + MEDINC + PopOv25wBach + PopOv25wHS
+
 Crime is the property and violent crimes that are reported. Reports denotes 311 service requests for a vacant building. VACperc is the share of vacant property within a community area according to ACS 2010-2015 estimates. MEDINC denotes the median of a community area according to ACS 2010-2015 estimates. PopOv25wBach and PopOv25wHS represent the share of population over 25 with a bachelors or high school degree, respectively, within a community area based on ACS 2010-2015 estimates.
 
