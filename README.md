@@ -23,6 +23,7 @@ Cleaning and merging the data was the most challenging part of this project, whi
 311 Calls 
 
 All we needed from this dataset was the number of 311 calls and their associated community area. After filtering for those columns, we summed the number of 311 calls, grouping by the respective community area (for all calls from 2011-2015).
+The problem we encountered with this data was that it had a few rows that were either null or rows had columns that were shifted to the right. There were very few cases of these errors, but when we finally narrowed it down to it's most basic form, we decided to manually remove those columns that were out of order or blank (using a command to clear all rows with a null value didn't get rid of them.) 
 
 Crime data 
 
@@ -32,7 +33,7 @@ We cleaned and narrowed the csv file down to year, community area, and primary t
 
 ACS Data 
 
-We wanted to explore some of the demographics of people living in each community area. We were specifically interested in Median income and educational attainment. ACS data had Median income, and for educational attainment, it had information regarding the total number of people over 25 with a Bachelor’s degree and the total number of people over 25 with a high school degree. Because we were wanted a percentage of each, we added two additional columns that divided each of these categories by the total population in each community area. Our resulting dataset left us with median income, percent of buildings in that neighborhood that are vacant, percent of the population over age 25 with a high school degree, and precent of the population over 25 with a bachelors degree, all indexed by community area.
+We wanted to explore some of the demographics of people living in each community area. We were specifically interested in Median income and educational attainment. ACS data had Median income, and for educational attainment, it had information regarding the total number of people over 25 with a Bachelor’s degree and the total number of people over 25 with a high school degree. Because we were wanted a percentage of each, we added two additional columns that divided each of these categories by the total population in each community area. Our resulting dataset left us with median income, percent of buildings in that neighborhood that are vacant, percent of the population over age 25 with a high school degree, and precent of the population over 25 with a bachelors degree, all indexed by community area. An issue we encountered was that the ACS data didn't have a row with the community area numbers. Instead, it had the name of the community area. We went through the csv file in excel and added a community area number column.
 
 Merge 
 
