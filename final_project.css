@@ -83,13 +83,14 @@ table {
   color: black;
 }
 
-/* to make odd rows colored */
-
 th, td {
   padding: 15px;
   color: black;
   text-align: center;
   padding: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: #c0e0d4;
+  border-bottom-width: thin;
 }
 .test {
   width: 450px;
@@ -130,7 +131,7 @@ a.email:hover {
 }
 footer li {
   color: #bbbbbb;
-  padding: 40px 20px;
+  padding: 20px;
   display: inline-block;
   text-decoration: none;
 }
@@ -164,4 +165,20 @@ em {
   color: #5c2d42;
   font-weight: bold !important;
   font-size: 18px;
+}
+
+.calls {
+  background-color: #6a9c89;
+}
+
+.reg3 {
+  float: right;
+}
+
+.link {
+  color:white;
+}
+
+#contact {
+  padding: 0;
 }
