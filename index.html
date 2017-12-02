@@ -12,9 +12,12 @@
 
 <ul class="navbar">
   <li><a href="#background">Background</a></li>
+  <li><a href="#investigation">Investigation</a></li>
   <li><a href="#findings">Findings</a></li>
   <li><a href="#methodology">Methodology</a></li>
-    <li><a href="#limitations">Limitations</a></li>
+  <li><a href="conclusion">Conclusion</a></li>
+  <li><a href="#limitations">Limitations</a></li>
+
   <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -27,47 +30,25 @@
   Our project seeks to explore James Q. Wilson and George Kelling’s broken windows theory, which links crime and disorder to a lack of civic engagement. The theory claims that as crimes and vandalism increases in a community, residents of the area internalize that they live in an “unsafe” environment and in turn, become apathetic. This apathy leads to a decrease in civic engagement, weakening social ties. Criminals, in turn, begin feeling less accountable to members of their community and gradually commit more serious crimes. Broken windows theory also suggests there is a relationship between abandoned buildings and crimes, noting that areas with low supervision can become havens for criminal activity. The broken windows theory advocates for eliminating disorder to prevent incidents of serious crimes. We want to apply the broken windows theory to neighborhoods in Chicago by examining whether neighborhoods with higher incidences of 311 reports for abandoned buildings have lower crime.
   <br>
   <p class="theory-paragraph">
+  <em> Past Work:</em>
+  </p>
+  <p class="theory-paragraph">
+  The premise of our study relies on the evidence in support of broken windows theory suggesting that vacant and abandoned properties are a significant driver of crime in urban neighborhoods. We also draw on evidence that greater reporting and intervention in these areas can lead to a reduction in crime. Spelman’s 1993 paper “Abandoned Buildings: Magnets of Crime?”  showed that crime rates on blocks with abandoned buildings were twice as high as rates on similar blocks without abandoned buildings. A more recent paper by Branas, Rubin, and Guo showed that increasing levels of vacant buildings were associated with increased risk of assaultive violence in urban block groups. The literature mentioned has assessed the relationship between abandoned buildings to the crime rate in the surrounding area. However, there is limited research investigating the effect of public or governmental response to vacant and abandoned buildings.
+  </p>
+  <p class="theory-paragraph">
   <em> How 311 Requests Work:</em>
 </p>
   <p class="theory-paragraph">
   After a 311 request is submitted, an inspector from the Chicago Building Department will assess the building. If the building is deemed in violation, the department notifies the owner to ensure the building is in a safe condition within 15 days. After the 15th day, the owner of the building is fined between $200 to $1000 per day, so there is a strong incentive to ensure the building is secured prior to the 16th day.
-
 </p>
 
-<h2 id="findings"> Key Findings </h2>
-<ul class="theory-paragraph" style="list-style-type:circle">
-    <li>Contrary to our initial hypothesis, 311 reports for building violations is positively correlated with incidences of property crimes and the findings are highly statistically significant
-</li>
+<h2 id="investigation"> Investigation </h2>
+<p class="theory-paragraph">
+  <img class="reg3" src="Analysis/images/reg3.png">
+  It is generally accepted among researchers that incidence of crime is on average higher around vacant and abandoned properties in urban areas because they can serve as safe havens for criminal activity (Branas, Rubin and Guo, 2012) . We were interested in investigating this relationship first to establish the theoretical framework for our study. We plot the relationship between share of vacant properties in a community area and incidences of violent crimes that are reported. We find there is a statistically positive and significant relationship between the two variables in an OLS regression. Interestingly, we do not see the same trend with the relationship between share of vacant properties and property crimes.
 <br>
-    <li>311 reports for building violations are statistically associated with incidences of violent crimes and findings are highly significant; the positive correlation with crime is greater in magnitude for violent crimes than property crimes
-</li>
+</p>
 <br>
-    <li>After controlling for median income and education level, 311 reporting effects on violent crimes increases, when compared to simple OLS regression results
-</li>
-<br>
-    <li>Interestingly, we find that median income is positively associated with violent crimes and the finding is statistically significant, but we do not see the same effect for property crimes (nor is the result statistically significant)
-</li>
-<br>
-    <li>The OLS regression examining 311 reports association to violent crime demonstrated there is a positive and statistically significant association between 311 reports and violent crimes.
-</li>
-  </ul>
-  <div>
-  <img class="reg" src="Analysis/Regression.png">
-  </div>
-  <div>
-  <img class="reg2" src="Analysis/Regression_violent.png">
-  </div>
-
-<div class="scat1">
-<img class="test" src="Analysis/reports311_propertycrime.png">
-</div>
-
-<div class="scat2">
-<img class="test" src="Analysis/reports311_violentcrime.png">
-</div>
-
-<br>
-
 <p class="theory-paragraph">
 <h2 id="methodology">Methodology</h2>
 </p>
@@ -80,6 +61,41 @@
   All we needed from this dataset was the number of 311 calls and their associated community area. After filtering for those columns, we summed the number of 311 calls, grouping by the respective community area (for all calls from 2011-2015).
 </p>
 <p class="theory-paragraph">
+<em>Neighborhoods with the highest number of 311 calls:</em>
+</p>
+<table>
+  <tr>
+    <th class="calls">Neighborhood</th>
+    <th class="calls">Number of 311 Calls</th>
+  </tr>
+  <tr>
+    <td> West Engelwood</td>
+    <td>525</td>
+
+  </tr>
+  <tr>
+    <td>Austin</td>
+    <td>466</td>
+
+  </tr>
+  <tr>
+    <td>Roseland</td>
+    <td>388</td>
+
+  </tr>
+  <tr>
+    <td>Englewood</td>
+    <td>359</td>
+
+  </tr>
+  <tr>
+    <td>West Garfield Park</td>
+    <td>327</td>
+
+  </tr>
+</table>
+<br>
+<p class="theory-paragraph">
   <em>Crime data</em>
   <br>
   We were specifically interested in the number of property and violent crimes per community area from 2011-2015. According to the Chicago Police Dept, Property crimes include: Burglary, Larceny, Motor Vehicle Theft, and Arson. The data, did not use the term “Burglary” so we decided to include “Theft.” Violent crimes included: Homicide, Criminal Sexual Assault, Assault, Battery and Robbery.
@@ -88,13 +104,49 @@
   We cleaned and narrowed the csv file down to year, community area, and primary type (type of crime from the 8 crimes listed above). We added two separate columns for property crime and violent crime, which simply received a 0 or 1 dependinding on the category they fell into. Then we summed total crimes (primary type), property crimes, and violent crimes all indexed by community area (for all years 2011-2015). These files were too large to post on Github, so we included links to dropbox.
 </p>
 <p class="theory-paragraph">
+<em class="em2">Neighborhoods with the highest count of violent and property crimes:</em>
+</p>
+<table>
+  <tr>
+    <th class="calls">Neighborhood</th>
+    <th class="calls">Number of Violent & Property Crimes</th>
+  </tr>
+  <tr>
+    <td>Austin</td>
+    <td>48433</td>
+
+  </tr>
+  <tr>
+    <td>Near North Side</td>
+    <td>33595</td>
+
+  </tr>
+  <tr>
+    <td>South Shore</td>
+    <td>30912</td>
+
+  </tr>
+  <tr>
+    <td>West Town</td>
+    <td>28686</td>
+
+  </tr>
+  <tr>
+    <td>Near West Side</td>
+    <td>27810</td>
+
+  </tr>
+</table>
+<br>
+
+<p class="theory-paragraph">
   <em>ACS Data</em>
   <br>
   We wanted to explore some of the demographics of people living in each community area. We were specifically interested in Median income and educational attainment. ACS data had Median income, and for educational attainment, it had information regarding the total number of people over 25 with a Bachelor’s degree and the total number of people over 25 with a high school degree. Because we were wanted a percentage of each, we added two additional columns that divided each of these categories by the total population in each community area. Our resulting dataset left us with median income, percent of buildings in that neighborhood that are vacant, percent of the population over age 25 with a high school degree, and precent of the population over 25 with a bachelors degree, all indexed by community area.
 </p>
 <p class="theory-paragraph">
   <em>Merge</em>
-  <br>
+<br>
   Once we had the minimum information from each data set, we merged them all using the community area as the key. This file contained the following columns:
   Community Area, Property, Violent, Primary Type, GEOG (Name of Community area), POP_25OV, HS, BACH, MEDINC, VACperc, PopOvr25wBach, PopOv25wHS, and Reports (for number of 311 reports).
 </p>
@@ -112,10 +164,47 @@ We draw on a model to assess the relationship between 311 reports to investigate
 <pre >
 Crime ~ Reports + VACperc + MEDINC + PopOv25wBach + PopOv25wHS
 </pre>
+<p class="theory-paragraph">
+Crime is the property and violent crimes that are reported. Reports denotes 311 service requests for a vacant building. VACperc is the share of vacant property within a community area according to ACS 2010-2015 estimates. MEDINC denotes the median of a community area according to ACS 2010-2015 estimates. PopOv25wBach and PopOv25wHS represent the share of population over 25 with a bachelors or high school degree, respectively, within a community area based on ACS 2010-2015 estimates.
+</p>
 </p>
 
+<h2 id="findings"> Key Findings </h2>
 
+<div>
+<img class="reg" src="Analysis/images/Reg1.png">
+</div>
+<div>
+<img class="reg2" src="Analysis/images/Reg2.png">
+</div>
 
+<div class="scat1">
+<img class="test" src="Analysis/images/reports311_propertycrime.png">
+</div>
+
+<div class="scat2">
+<img class="test" src="Analysis/images/reports311_violentcrime.png">
+</div>
+<br>
+
+<ul class="theory-paragraph" style="list-style-type:circle">
+  <br>
+    <li>Contrary to our initial hypothesis, 311 reports for building violations is positively correlated with incidences of property crimes and the findings are highly statistically significant
+</li>
+<br>
+    <li>311 reports for building violations are statistically associated with incidences of violent crimes and findings are highly significant; the positive correlation with crime is greater in magnitude for violent crimes than property crimes
+</li>
+<br>
+    <li>After controlling for median income and education level, 311 reporting effects on violent crimes increases, when compared to simple OLS regression results
+</li>
+<br>
+    <li>Interestingly, we find that median income is positively associated with violent crimes and the finding is statistically significant, but we do not see the same effect for property crimes (nor is the result statistically significant)
+</li>
+<br>
+    <li>The OLS regression examining 311 reports association to violent crime demonstrated there is a positive and statistically significant association between 311 reports and violent crimes.
+</li>
+  </ul>
+<br>
 <h2 id="limitations"> Limitations </h2>
   <ul class="theory-paragraph" style="list-style-type:circle">
       <li>Our data does not take into account areas that violations were actually inspected; referring back to the earlier section, submitting a service request from the city will lead to an inspector to assess the call. How secured the building becomes after is not accounted for in the data, so just having a 311 report and not having the building rehabbed may not have a crime reducing effect. </li>
@@ -129,14 +218,24 @@ Crime ~ Reports + VACperc + MEDINC + PopOv25wBach + PopOv25wHS
       <li>Our grouping of the years also limits our ability to capture changes over time. With the crimes and 311 calls grouped for all years, any changes between those years would be lost in our analysis.
       </li>
     </ul>
+<br>
 
 
+<h2 id="conclusion"> Conclusion </h2>
+  <ul class="theory-paragraph" style="list-style-type:circle">
+<li>Our study finds that 311 reports for vacant buildings is statistically associated with incidences of violent crimes and property crimes. The coefficient is greater in magnitude and statistical significance for the effect on violent crimes, echoing previous literature demonstrating that greater vacancies leads to more assaultive and violent crimes (Brana et al., 2012)</br>
+<br>
+<li>Our findings are consistent with increasing evidence that displacement of crime is likely limited following reductions in opportunity for crime (i.e. having an abandoned building inspected); indeed, there may be more general benefits of crime reduction through intervening in abandoned spaces if done at a large-scale. As a result, one instance of 311 reporting may not have a sufficient effect on displacing crime. Likely, there needs to be large-scale rehabilitation of vacant properties to see a significant effect on crime. This has important implications for public policy in the city of Chicago and in urban areas around the world, demonstrating the effects of different public of governmental interventions to rehabilitate vacant spaces.</li>
+<br>
+<li>The results of our analysis, and of the existing literature, warrant this topic of further research. With wide array of publicly available data and the additional specifications we suggest, Chicago may serve as an excellent case in examining this topic.</li>
+<br>
 
 <h2 id="contact">Contact Info</h2>
 <table><col>
     <tr><th>Andrea Magana</th>      <td>andreamagana1@gmail.com</td></tr>
     <tr><th>Vicky Stavropoulos</th>       <td>vastavropoulos@gmail.com</td></tr>
     <tr><th>Steven Walker</th>           <td>walkersj90@gmail.com</td></tr>
+
 
 </col></table>
 <br>
@@ -159,6 +258,10 @@ function topFunction() {
 </script>
 <footer>
   <li>Site created 2017 Fall Quarter</li>
+  <li>Sources:
+<a class="link" href="https://www.hindawi.com/journals/isrn/2012/246142/"> https://www.hindawi.com/journals/isrn/2012/246142/-- vacant properties and violence</a>
+<a class="link" href="http://www.inquiriesjournal.com/articles/1404/effect-of-vacant-buildings-on-crime">http://www.inquiriesjournal.com/articles/1404/effect-of-vacant-buildings-on-crime</a>
+</li>
   <button onclick="topFunction()" class="btn" title="Return to top"> Top </button>
 </footer>
 </body>
